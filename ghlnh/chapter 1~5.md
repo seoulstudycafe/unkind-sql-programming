@@ -8,7 +8,7 @@
 
 관계형 모델은 릴레이션(relation)에 데이터를 저장한다. 릴레이션은 아래 그림처럼 2차원 형태의 표로 구성된다. 릴레이션은 튜플(tuple)의 집합이며, 튜플은 속성(attribute)의 집합이다
 
-![1.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/4bd74a31-ef46-4f35-a8e3-4874ea2b09b5/image.png)
+![1.png](./img/1.png)
 
 ## 1.4 IT 시스템
 
@@ -61,7 +61,7 @@ IT 시스템은 데이터의 발생 유형과 사용 목적에 따라 운영 시
 
 아래 그림의 부서 엔터티와 사원엔터티는 관계를 가진다. 이때 부서 엔터티를 부모 엔터티, 사원 엔터티를 자식 엔터티라고 한다. 자식의 엔터티는 부모의 엔터티의 기본 식별자를 상속받는다. 부모 엔터티로부터 상속받은 식별자를 외래 식별자라고 한다.
 
-![2.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/23905042-2840-4759-9560-53ee52cd4062/image.png)
+![2.png](./img/2.png)
 
 ### 2.2.3.1 카디널리티
 
@@ -78,11 +78,11 @@ IT 시스템은 데이터의 발생 유형과 사용 목적에 따라 운영 시
 
 아래 그림은 식별 관계로만 설계한 데이터 모델이다. 자식 엔터티로 갈수록 기본 식별자가 길어지는 것을 확인할 수 있다. 기본 식별자가 길어지면 저장 공간도 늘어나고 SQL도 길어진다.
 
-![3.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/5c7bdec3-aef8-4ad4-87b0-f03db7908f30/image.png)
+![3.png](./img/3.png)
 
 아래 그림은 비식별 관계로만 설계한 데이터 모델이다. 저장 공간을 최소화할 수 있지만 2단계를 넘어가면 관계가 단절되는 단점이 있다. t1테이블의 a열에 해당하는 t4테이블의 z열을 조회하기 위해서는 4개의 테이블을 모두 조회해야한다. 그림 2-20의 데이터 모델은 t4테이블만 조회하면 된다.
 
-![4.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/13be8484-21c3-411a-88ce-a297e6d5b05d/image.png)
+![4.png](./img/4.png)
 
 ## 2.3 정규형
 
@@ -107,7 +107,7 @@ IT 시스템은 데이터의 발생 유형과 사용 목적에 따라 운영 시
 | 고유 식별자 | PK 제약조건 |
 | 외래 식별자 | FK 제약조건 |
 
-![5.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/e55fb66e-b1d7-48f3-a069-b784b2695b76/image.png)
+![5.png](./img/5.png)
 
 위와 같은 부서 테이블은 아래의 DDL문으로 생성할 수 있다.
 
@@ -215,15 +215,15 @@ CREATE TABLE 사원 (
 
 오라클 데이터베이스는 하나의 데이터베이스와 하나 이상의 인스턴스로 구성된다. 데이터베이스는 데이터를 저장하는 파일의 모음이다. 인스턴스는 SGA와 백그라운드 프로세스로 구성된다.
 
-![6.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/d442e6f4-852e-409f-9e8e-79d6236333d7/image.png)
+![6.png](./img/6.png)
 
 하나의 데이터베이스와 하나의 인스턴스로 구성된 오라클 데이터베이스를 single 서버라고 한다. 고가용성(High Availability, HA)과 성능 향상을 위해 오라클 데이터베이스를 RAC(Real Application Clusters)로 구성할 수 있다. RAC는 하나의 데이터베이스와 2개 이상의 인스턴스로 구성된다.
 
-![7.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/8b79c090-6fb8-4cdd-a067-1ed8b028b448/image.png)
+![7.png](./img/7.png)
 
 SGA는 아래와 같은 메모리 구조를 가진다. shared pool은 library cache와 data ditctionary cache를 포함한다.
 
-![8.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/c818501c-c450-404c-b8ac-4e2761232765/image.png)
+![8.png](./img/8.png)
 
 | SGA | 설명 |
 | --- | --- |
@@ -234,7 +234,7 @@ SGA는 아래와 같은 메모리 구조를 가진다. shared pool은 library ca
 | data dictionary cache | 데이터 딕셔너리 정보를 캐시 |
 | large pool | shared pool보다 큰 메모리를 할당하기 위한 영역 |
 
-![9.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/0540d35f-27ae-4458-8880-f14da54ba1c3/image.png)
+![9.png](./img/9.png)
 
 ### 3.2.4 저장 구조
 
@@ -244,7 +244,7 @@ SGA는 아래와 같은 메모리 구조를 가진다. shared pool은 library ca
 
 물리 저장 구조(physical storage structure)는 파일로 저장되며 OS에서 확인할 수 있다. archived redo log 파일처럼 데이터베이스에 속하지 않는 파일도 존재한다.
 
-![10.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/a6967208-f755-45e1-bdc3-362c422a06d7/image.png)
+![10.png](./img/10.png)
 
 | 파일 | 설명 |
 | --- | --- |
@@ -257,7 +257,7 @@ SGA는 아래와 같은 메모리 구조를 가진다. shared pool은 library ca
 
 논리 저장 구조(logical storage structure)는 오라클 데이터베이스 내부에서 관리된다. 논리 저장 구조와 물리 저장 구조는 아래의 관계를 가진다. 세그먼트는 하나의 테이블스페이스에 속하고, 다수의 데이터 파일에 저장될 수 있다.
 
-![11.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/b38a92aa-175d-40fe-b177-c88f75a77d4a/image.png)
+![11.png](./img/11.png)
 
 | 단위 | 설명 |
 | --- | --- |
@@ -270,7 +270,7 @@ SGA는 아래와 같은 메모리 구조를 가진다. shared pool은 library ca
 
 오라클 데이터베이스는 아래와 같은 네트워크 구조를 가진다. 리스너(listener)는 데이터베이스 서버에서 동작하는 프로그램으로 오라클 데이터베이스의 접속을 처리한다. listener.ora 파일은 리스너의 설정 파일이다. tnsnames.ora 파일은 클라이언트의 설정 파일로 데이터베이스 서버의 접속 정보가 저장된다.
 
-![12.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/997df410-afbf-4ee0-8445-ac03a07fc9d6/image.png)
+![12.png](./img/12.png)
 
 리스너의 방식의 접속은 아래의 순서로 진행된다
 
@@ -280,9 +280,9 @@ SGA는 아래와 같은 메모리 구조를 가진다. shared pool은 library ca
 
 커넥션과 세션은 혼동하기 쉬운 개념이다. 커넥션(connection)은 클라이언트 프로세스와 데이터베이스 인스턴스 사이의 물리적 통신 경로, 세션(Session)은 데이터베이스에 로그인 한 사용자의 상태를 나타내는 논리적 객체다. 커넥션을 통해 세션이 생성된다.
 
-![13.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/dae4990d-f9d9-461f-80e8-45cb2ffc2b53/image.png)
+![13.png](./img/13.png)
 
-![14.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/717b7f19-af14-44c3-80c8-fdc6d1e379d6/image.png)
+![14.png](./img/14.png)
 
 ---
 
@@ -292,7 +292,7 @@ SGA는 아래와 같은 메모리 구조를 가진다. shared pool은 library ca
 
 SQL은 아래와 같은 과정으로 처리된다. syntax check, semantic check, shared pool check 의 과정을 파싱이라고 한다. optimization과 row source generator 과정까지 거치는 것을 hard parse, share pool에 저장된 커서를 바로 수행하는 것을 soft parse라고 한다.
 
-![15.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/24b98ab9-4464-4632-a749-9314dcc7832e/image.png)
+![15.png](./img/15.png)
 
 | 과정 | 설명 |
 | --- | --- |
@@ -306,7 +306,7 @@ SQL은 아래와 같은 과정으로 처리된다. syntax check, semantic check,
 
 SELECT문은 아래의 과정으로 수행된다.
 
-![16.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/6f61df97-438f-418b-b339-5a74521dbbaf/image.png)
+![16.png](./img/16.png)
 
 1. 클라이언트 프로세스가 서버 프로세스로 SELECT문을 전달
 2. buffer cache에 필요한 데이터 블록이 있는지 확인
@@ -350,7 +350,7 @@ SAMPLE절을 사용하면 테이블을 샘플링하여 조회할 수 있다. 대
 | sample_percent | 샘플링 비율 (0.000001 ≤ sample_percent <100) |
 | SEED (seed_value) | 항상 동일한 샘플을 반환 (seed_value는 0~4294967295 범위의 정수) |
 
-![17.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/5ca7f206-dcad-4f62-af2d-914ff203290a/image.png)
+![17.png](./img/17.png)
 
 - `COL[UMN]` 명령어
     
@@ -360,13 +360,13 @@ SAMPLE절을 사용하면 테이블을 샘플링하여 조회할 수 있다. 대
 > COL[UML] colunm FOR[MAT] format
 > 
 
-![18.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/4f4eae6e-9292-45ec-aab4-d503a90d0314/image.png)
+![18.png](./img/18.png)
 
 ### 5.3.1.3 날짜 리터럴
 
 날짜 값은 NLS 파라미터 설정에 따라 출력 포맷이 결정된다. 날짜 값의 출력 포맷과 관련된 NLS 파라미터를 아래와 같이 설정하자
 
-![19.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/398b2164-9867-4ab8-bc82-008797156699/image.png)
+![19.png](./img/19.png)
 
 YEAR TO MONTH 리터럴은 년에서 월까지의 간격을 지정할 수 있다. precision의 범위는 0 ~ 9, 기본값은 2다.
 
@@ -389,10 +389,9 @@ YEAR TO MONTH 리터럴은 년에서 월까지의 간격을 지정할 수 있다
     END
     ```
     
-    ![20.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/72e19d6f-3a20-41b8-a5ce-e1e2becc5b01/image.png)
+    ![20.png](./img/20.png)
     
-    ![21.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/a138c8a9-d604-4c97-a100-485b710172d8/image.png)
-    
+    ![21.png](./img/21.png)
 - ROWID는 데이터베이스에서 행을 식별할 수 있는 고유 값이다. 오브젝트, 파일, 블록, 행번호의 조합으로 계산된다.
     
     
@@ -407,8 +406,8 @@ YEAR TO MONTH 리터럴은 년에서 월까지의 간격을 지정할 수 있다
 
 SQL도 바인드 변수를 사용할 수 있다. 바인드 변수를 사용하면 쿼리의 재사용성을 높일 수 있다
 
-![22.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/710e0b0e-6d82-465e-a91d-37a13634dfeb/image.png)
+![22.png](./img/22.png)
 
 `EXEC[UTE]`명령어를 사용하면 바인드 변수에 새로운 값을 할당 할 수 있다.
 
-![23.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/5fa0de1d-95c1-4faf-abf5-52150a9e293f/88451a4c-5455-4e91-9014-733e3cf501ba/image.png)
+![23.png](./img/23.png)
